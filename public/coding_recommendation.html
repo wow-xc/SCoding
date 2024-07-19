@@ -67,7 +67,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="index.html">My App</a>
+        <a class="navbar-brand" href="index.html">TechUp</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -80,7 +80,7 @@
                     <a class="nav-link" href="todolist.html">To Do List</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">변수 이름 생성기</a>
+                    <a class="nav-link" href="variable_generator.html">변수 이름 생성기</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.html">로그인</a>
@@ -161,7 +161,7 @@
                         recommendationDiv.innerHTML = `
                             <h5>추천 문제:</h5>
                             <p><a href="${problemUrl}" target="_blank">문제 ${problem.id}</a></p>
-                            <p>난이도: ${problem.tier}단계</p>
+                            <p>난이도: ${problem.tier}단계 (1~30)</p>
                         `;
                     } else {
                         recommendationDiv.innerHTML = '<p>문제 추천 결과가 없습니다.</p>';
