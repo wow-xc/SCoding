@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코딩 문제 추천</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+    <style>
+        body {
+            background-color: #F1F6F9;
+            font-family: 'Pretendard Variable', sans-serif;
+        }
+        .navbar {
+            background-color: #394867;
+        }
+        .navbar-brand, .nav-link {
+            color: #F1F6F9 !important;
+            font-weight: 700;
+        }
+        .nav-link:hover {
+            color: #9BA4B5 !important;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 10px;
+            background-color: #394867;
+            color: #F1F6F9;
+            margin-bottom: 20px;
+            border: none;
+        }
+        .card:hover {
+            background-color: #212A3E;
+        }
+        .btn-primary {
+            background-color: #212A3E;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+        .btn-primary:hover {
+            background-color: #9BA4B5;
+        }
+        .form-control {
+            border-radius: 5px;
+            font-weight: 700;
+        }
+        .recommendation {
+            background-color: #F1F6F9;
+            border: 1px solid #9BA4B5;
+            border-radius: 5px;
+            margin-top: 20px;
+            padding: 15px;
+            font-weight: 700;
+        }
+        .recommendation h5 {
+            color: #212A3E;
+            font-weight: 800;
+        }
+        .recommendation p {
+            color: #394867;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html">My App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="coding_recommendation.html">코딩 문제 추천</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="todolist.html">To Do List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">변수 이름 생성기</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">로그인</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.html">회원가입</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 class="text-center mt-5 mb-4">코딩 문제 추천</h2>
+        <div class="card p-4">
+            <h5 class="card-title">문제 추천받기</h5>
+            <p class="card-text">난이도에 맞는 문제를 랜덤으로 추천받을 수 있습니다.</p>
+            <form id="difficultyForm">
+                <div class="form-group">
+                    <label for="difficultySelect">난이도 선택:</label>
+                    <select class="form-control" id="difficultySelect">
+                        <option value="1">Bronze 5</option>
+                        <option value="2">Bronze 4</option>
+                        <option value="3">Bronze 3</option>
+                        <option value="4">Bronze 2</option>
+                        <option value="5">Bronze 1</option>
+                        <option value="6">Silver 5</option>
+                        <option value="7">Silver 4</option>
+                        <option value="8">Silver 3</option>
+                        <option value="9">Silver 2</option>
+                        <option value="10">Silver 1</option>
+                        <option value="11">Gold 5</option>
+                        <option value="12">Gold 4</option>
+                        <option value="13">Gold 3</option>
+                        <option value="14">Gold 2</option>
+                        <option value="15">Gold 1</option>
+                        <option value="16">Platinum 5</option>
+                        <option value="17">Platinum 4</option>
+                        <option value="18">Platinum 3</option>
+                        <option value="19">Platinum 2</option>
+                        <option value="20">Platinum 1</option>
+                        <option value="21">Diamond 5</option>
+                        <option value="22">Diamond 4</option>
+                        <option value="23">Diamond 3</option>
+                        <option value="24">Diamond 2</option>
+                        <option value="25">Diamond 1</option>
+                        <option value="26">Ruby 5</option>
+                        <option value="27">Ruby 4</option>
+                        <option value="28">Ruby 3</option>
+                        <option value="29">Ruby 2</option>
+                        <option value="30">Ruby 1</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">문제 추천받기</button>
+            </form>
+            <div class="recommendation mt-4" id="recommendation">
+                <!-- 추천 문제 이름이 여기에 표시됩니다. -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('difficultyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const difficulty = document.getElementById('difficultySelect').value;
+            const recommendationDiv = document.getElementById('recommendation');
+            
+            fetch(`http://localhost:3000/recommendation?difficulty=${difficulty}`)
+                .then(response => {
+                    if (!response.ok) {
+                        return response.text().then(text => { throw new Error(text); });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const problem = data.problem;
+                    if (problem) {
+                        const problemUrl = `https://www.acmicpc.net/problem/${problem.id}`;
+                        recommendationDiv.innerHTML = `
+                            <h5>추천 문제:</h5>
+                            <p><a href="${problemUrl}" target="_blank">문제 ${problem.id}</a></p>
+                            <p>난이도: ${problem.tier}단계</p>
+                        `;
+                    } else {
+                        recommendationDiv.innerHTML = '<p>문제 추천 결과가 없습니다.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('문제 추천 오류:', error);
+                    recommendationDiv.innerHTML = `<p>문제 추천 중 오류가 발생했습니다: ${error.message}</p>`;
+                });
+        });
+    </script>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

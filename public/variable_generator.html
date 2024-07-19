@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 이름 생성기</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+    <style>
+        body {
+            background-color: #F1F6F9;
+            font-family: 'Pretendard Variable', sans-serif;
+        }
+        .navbar {
+            background-color: #394867;
+        }
+        .navbar-brand, .nav-link {
+            color: #F1F6F9 !important;
+            font-weight: 700;
+        }
+        .nav-link:hover {
+            color: #9BA4B5 !important;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 10px;
+            background-color: #394867;
+            color: #F1F6F9;
+            margin-bottom: 20px;
+            border: none;
+        }
+        .btn-primary {
+            background-color: #212A3E;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+        .btn-primary:hover {
+            background-color: #9BA4B5;
+        }
+        .form-control {
+            border-radius: 5px;
+            font-weight: 700;
+        }
+        .recommendation {
+            background-color: #F1F6F9;
+            border: 1px solid #9BA4B5;
+            border-radius: 5px;
+            margin-top: 20px;
+            padding: 15px;
+            font-weight: 700;
+        }
+        .recommendation h5 {
+            color: #212A3E;
+            font-weight: 800;
+        }
+        .recommendation p {
+            color: #394867;
+            font-weight: 700;
+        }
+        .form-check {
+            margin-bottom: 1rem;
+        }
+        .form-check-input {
+            position: absolute;
+            margin-top: 0.3rem;
+            margin-right: 0.3rem;
+            opacity: 0;
+            cursor: pointer;
+            width: 0;
+            height: 0;
+        }
+        .form-check-label {
+            position: relative;
+            padding-left: 2rem;
+            cursor: pointer;
+            font-weight: 700;
+            color: #F1F6F9;
+        }
+        .form-check-label::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 50%;
+            border: 2px solid #9BA4B5;
+            background-color: #F1F6F9;
+            transform: translateY(-50%);
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .form-check-input:checked ~ .form-check-label::before {
+            background-color: #212A3E;
+            border-color: #212A3E;
+        }
+        .form-check-input:checked ~ .form-check-label::after {
+            content: '';
+            position: absolute;
+            left: 0.375rem;
+            top: 50%;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-radius: 50%;
+            background-color: #F1F6F9;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html">My App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="coding_recommendation.html">코딩 문제 추천</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="todolist.html">To Do List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="variable_generator.html">변수 이름 생성기</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">로그인</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.html">회원가입</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 class="text-center mt-5 mb-4">변수 이름 생성기</h2>
+        <div class="card p-4">
+            <h5 class="card-title">변수 이름 생성</h5>
+            <p class="card-text">변수 이름과 유형을 선택하여 생성할 수 있습니다.</p>
+            <form id="variableForm">
+                <div class="form-group">
+                    <label for="roleInput">역할:</label>
+                    <input type="text" class="form-control" id="roleInput" placeholder="역할 입력">
+                </div>
+                <div class="form-group">
+                    <label>변수명 유형:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="caseType" id="camelCase" value="camelCase" checked>
+                        <label class="form-check-label" for="camelCase">
+                            camelCase
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="caseType" id="snakeCase" value="snakeCase">
+                        <label class="form-check-label" for="snakeCase">
+                            snake_case
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="caseType" id="pascalCase" value="pascalCase">
+                        <label class="form-check-label" for="pascalCase">
+                            PascalCase
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">변수 이름 생성</button>
+            </form>
+            <div class="recommendation mt-4" id="result">
+                <!-- 생성된 변수 이름이 여기에 표시됩니다. -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('variableForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const role = document.getElementById('roleInput').value;
+            const caseType = document.querySelector('input[name="caseType"]:checked').value;
+            const resultDiv = document.getElementById('result');
+
+            if (!role) {
+                resultDiv.innerHTML = '<p>역할을 입력해주세요.</p>';
+                return;
+            }
+
+            let variableName;
+            switch (caseType) {
+                case 'camelCase':
+                    variableName = role.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) => index === 0 ? match.toLowerCase() : match.toUpperCase()).replace(/\s+/g, '');
+                    break;
+                case 'snakeCase':
+                    variableName = role.replace(/\s+/g, '_').toLowerCase();
+                    break;
+                case 'pascalCase':
+                    variableName = role.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match) => match.toUpperCase()).replace(/\s+/g, '');
+                    break;
+                default:
+                    variableName = role;
+            }
+
+            resultDiv.innerHTML = `
+                <h5>생성된 변수 이름:</h5>
+                <p>${variableName}</p>
+            `;
+        });
+    </script>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

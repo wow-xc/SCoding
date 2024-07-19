@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인 페이지</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+    <style>
+        body {
+            background-color: #F1F6F9;
+            font-family: 'Pretendard Variable', sans-serif;
+        }
+        .navbar {
+            background-color: #394867;
+        }
+        .navbar-brand, .nav-link {
+            color: #F1F6F9 !important;
+            font-weight: 700;
+        }
+        .nav-link:hover {
+            color: #9BA4B5 !important;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 10px;
+            background-color: #394867;
+            color: #F1F6F9;
+            margin-bottom: 20px;
+            border: none;
+        }
+        .card:hover {
+            background-color: #212A3E;
+        }
+        .btn-primary {
+            background-color: #212A3E;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+        .btn-primary:hover {
+            background-color: #9BA4B5;
+        }
+        .btn-secondary {
+            background-color: #F1F6F9;
+            border: 1px solid #9BA4B5;
+            border-radius: 5px;
+            color: #212A3E;
+            font-weight: 700;
+        }
+        .btn-secondary:hover {
+            background-color: #394867;
+            color: #F1F6F9;
+        }
+        .card-title {
+            font-weight: 700;
+        }
+        .card-text {
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html">TechUp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="coding_recommendation.html">코딩 문제 추천</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="todolist.html">To Do List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="variable_generator.html">변수 이름 생성기</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">로그인</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.html">회원가입</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 class="text-center mt-5 mb-4">Welcome to My App</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h5 class="card-title">코딩 문제 추천</h5>
+                    <p class="card-text">나의 티어에 맞는 코딩 문제를 추천받을 수 있습니다.</p>
+                    <a href="coding_recommendation.html" class="btn btn-secondary">문제 추천받기</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h5 class="card-title">To Do List</h5>
+                    <p class="card-text">할 일을 추가하고, 관리할 수 있는 리스트입니다.</p>
+                    <a href="todolist.html" class="btn btn-secondary">To Do List 보기</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h5 class="card-title">변수 이름 생성기</h5>
+                    <p class="card-text">변수 이름을 쉽게 생성할 수 있는 도구입니다.</p>
+                    <a href="variable_generator.html" class="btn btn-secondary">생성기 사용하기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
