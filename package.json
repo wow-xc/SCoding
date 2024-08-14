@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node server.js"
   },
-  "name": "techup",
-  "description": "dsfasfd",
+  "name": "tp",
+  "description": "tp",
   "type": "module",
   "version": "1.0.0",
   "main": "server.js",

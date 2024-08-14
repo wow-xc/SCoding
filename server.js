@@ -1,4 +1,3 @@
-// server.js
 import express from 'express';
 import fetch from 'node-fetch';
 import cors from 'cors';
@@ -15,11 +14,11 @@ app.get('/recommendation', async (req, res) => {
     try {
         const response = await fetch(`https://solved.ac/api/v3/search/problem?query=tier:${difficulty}`);
         if (!response.ok) {
-            throw new Error('Solved.ac API 요청 실패');
+            throw new Error('실패');
         }
 
         const data = await response.json();
-        console.log(data); // 응답 구조를 확인하기 위해 로그 출력
+        console.log(data);
 
         if (data.count > 0) {
             const problem = data.items[Math.floor(Math.random() * data.items.length)];
