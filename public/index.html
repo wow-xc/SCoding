@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈페이지</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html">TechUp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">홈</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="coding_recommendation.html">백준 문제 추천</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="timer.html">타이머</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h1 class="font-weight-bold">TechUp에 오신 것을 환영합니다!</h1>
+            <p class="lead font-weight-bold">아래 카드에서 각 기능에 대한 설명을 확인하고, 버튼을 클릭하여 페이지로 이동하세요.</p>
+        </div>
+        
+        <!-- 백준 문제 추천 카드 -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold">백준 문제 추천</h5>
+                <p class="card-text font-weight-bold">난이도에 맞는 백준 문제를 랜덤으로 추천받을 수 있는 페이지입니다. 코딩 문제를 통해 실력을 향상시켜보세요.</p>
+                <a href="coding_recommendation.html" class="btn btn-primary">문제 추천 페이지로 이동</a>
+            </div>
+        </div>
+        
+        <!-- 타이머 카드 -->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold">타이머</h5>
+                <p class="card-text font-weight-bold">코딩 연습이나 작업 시간을 관리할 수 있는 타이머입니다. 시작, 정지, 리셋 기능을 제공합니다.</p>
+                <a href="timer.html" class="btn btn-primary">타이머 페이지로 이동</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

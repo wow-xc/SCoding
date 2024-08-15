@@ -1,0 +1,92 @@
+/* style.css */
+body {
+    background-color: #F1F6F9;
+    font-family: 'Pretendard Variable', sans-serif;
+}
+
+.navbar {
+    background-color: #394867;
+}
+
+.navbar-brand {
+    color: #F1F6F9 !important;
+    font-weight: 700;
+    padding-left: 20px;
+}
+
+.nav-link {
+    color: #F1F6F9 !important;
+    font-weight: 700;
+}
+
+.nav-link:hover {
+    color: #9BA4B5 !important;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: #394867;
+    color: #F1F6F9;
+    margin-bottom: 20px;
+    border: none;
+}
+
+/* .card:hover {
+    background-color: #212A3E;
+} */
+
+.btn-primary {
+    background-color: #212A3E;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    margin: 0 10px;
+}
+
+.btn-primary:hover {
+    background-color: #9BA4B5;
+}
+
+.form-control {
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.recommendation, .timer-container {
+    background-color: #F1F6F9;
+    border: 1px solid #9BA4B5;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 15px;
+    font-weight: 700;
+}
+
+.recommendation h5, .timer-display {
+    color: #212A3E;
+    font-weight: 800;
+    text-align: center;
+}
+
+.recommendation p, .timer-controls {
+    color: #394867;
+    font-weight: 700;
+}
+
+.timer-display {
+    font-size: 4rem; /* 타이머 숫자 크게 설정 */
+    font-weight: 800;
+    margin: 100px 0;
+    letter-spacing: 0.2em; /* 숫자 간격 조정 */
+    font-family: 'Courier New', monospace;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* 상단 여백 추가 */
+}
+
