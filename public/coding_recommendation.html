@@ -25,12 +25,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="timer.html">타이머</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="homepage_recommendation.html">홈페이지 추천</a>
+                </li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
-        <h2 class="text-center mt-5 mb-4">코딩 문제 추천</h2>
+        <h2 class="text-center mt-5 mb-4">백준 문제 추천</h2>
         <div class="card p-4">
             <h5 class="card-title">문제 추천받기</h5>
             <p class="card-text">난이도에 맞는 문제를 랜덤으로 추천받을 수 있습니다.</p>
@@ -83,7 +86,7 @@
             const difficulty = document.getElementById('difficultySelect').value;
             const recommendationDiv = document.getElementById('recommendation');
 
-            fetch(`http://localhost:3000/recommendation?difficulty=${difficulty}`)
+            fetch(`http://localhost:3030/recommendation?difficulty=${difficulty}`)
                 .then(response => {
                     if (!response.ok) {
                         return response.text().then(text => { throw new Error(text); });
