@@ -1,4 +1,3 @@
-/* style.css */
 body {
     background-color: #F1F6F9;
     font-family: 'Pretendard Variable', sans-serif;
@@ -34,10 +33,6 @@ body {
     margin-bottom: 20px;
     border: none;
 }
-
-/* .card:hover {
-    background-color: #212A3E;
-} */
 
 .btn-primary {
     background-color: #212A3E;
@@ -77,16 +72,16 @@ body {
 }
 
 .timer-display {
-    font-size: 4rem; /* 타이머 숫자 크게 설정 */
+    font-size: 4rem;
     font-weight: 800;
     margin: 100px 0;
-    letter-spacing: 0.2em; /* 숫자 간격 조정 */
+    letter-spacing: 0.2em;
     font-family: 'Courier New', monospace;
 }
 
 .timer-controls {
     display: flex;
     justify-content: center;
-    margin-top: 10px; /* 상단 여백 추가 */
+    margin-top: 10px;
 }
 

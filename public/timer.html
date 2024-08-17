@@ -65,7 +65,7 @@
                     seconds++;
                 }
                 document.getElementById('timer').textContent = formatTime(seconds, milliseconds);
-            }, 10); // 10ms 간격으로 업데이트
+            }, 10);
         });
 
         document.getElementById('stopButton').addEventListener('click', function() {
@@ -79,9 +79,5 @@
             document.getElementById('timer').textContent = formatTime(seconds, milliseconds);
         });
     </script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
